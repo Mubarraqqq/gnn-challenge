@@ -7,3 +7,8 @@ venv311/
 
 testing/
 tvenv
+
+
+.vscode/
+new_venv/
+no_commit.py
