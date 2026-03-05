@@ -4,8 +4,7 @@
 
 | Rank | Team | Run | Model | Type | F1-Score | Accuracy | Precision | Recall | Date | Submitter |
 |------|------|-----|-------|------|----------|----------|-----------|--------|------|-----------|
-| 1 | team_100 | run_100 | My GNN v_100 | human | 0.38 | 0.61 | 0.00 | 0.00 | 2026-03-05 03:21 | [participant](https://github.com/participant) |
-| 2 | organizers | advanced_gnn | Advanced GNN (GraphSAGE) | human | 0.33 | 0.40 | 0.15 | 0.12 | 2026-03-05 03:21 | [mubarraqqq](https://github.com/mubarraqqq) |
+| 1 | organizers | advanced_gnn | Advanced GNN (GraphSAGE) | human | 0.33 | 0.40 | 0.15 | 0.12 | 2026-03-05 03:26 | [mubarraqqq](https://github.com/mubarraqqq) |
 
 ## Notes
 - This leaderboard is auto-generated from `leaderboard/leaderboard.csv`.
