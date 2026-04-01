@@ -1,0 +1,7 @@
+{
+  "team": "Tasneem"
+  "run_id": "run_001",
+  "model_name": "GCN",
+  "model_type": "human",
+  "submitter": "tasneem-mselim"
+}
