@@ -1,7 +1,6 @@
 {
-    "team": "Idrees_Bhat",
-    "run_id": "run_01",
-    "model_name": "My GNN Model",
-    "model_type": "human",
-    "submitter": "Mohammad_Idrees_Bhat"
-  }
+  "team_name": "Mohammad Idrees Bhat",
+  "run_id": "run_01",
+  "model": "GCN",
+  "description": "Baseline model submission"
+}
