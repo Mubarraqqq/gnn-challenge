@@ -1,7 +1,7 @@
 {
   "team_name": "Mohammad Idrees Bhat",
   "run_id": "run_01",
-  "model": "GCN",
-  "description": "Simple improved baseline submisison",
+  "model_name": "GCN",
+  "model_type": "human",
   "submitter": "idrees11"
 }
