@@ -11,6 +11,7 @@
 | 5 | RosaPY | run_04 | GraphSAGE | human | 0.47 | 0.49 | 0.36 | 0.42 | 2026-04-15 11:42 | [RosaPY](https://github.com/RosaPY) |
 | 6 | hadilaff | run_001 | GNN | human | 0.44 | 0.48 | 0.31 | 0.28 | 2026-04-03 21:27 | [hadilaff](https://github.com/hadilaff) |
 | 6 | sanae | run_001 | GaphSage_3layers | human | 0.44 | 0.61 | 0.50 | 0.07 | 2026-03-14 13:11 | [SanaeZR](https://github.com/SanaeZR) |
+| 6 | LLM_Claude_Opus_47 | run_claude_47 | GraphSAGE (zero-shot Claude Opus 4.7, agent mode, temperature=0) | llm-only | 0.44 | 0.61 | 0.50 | 0.07 | 2026-05-19 06:23 | [LLM_Claude_Opus_47](https://github.com/LLM_Claude_Opus_47) |
 | 7 | Sargam_Goyal | run001 | BiGCN | human | 0.41 | 0.59 | 0.29 | 0.05 | 2026-04-11 18:03 | [Sargam1412](https://github.com/Sargam1412) |
 | 8 | Gemini-3-Flash | run_01 | GraphSAGE | llm | 0.38 | 0.61 | 0.00 | 0.00 | 2026-05-16 19:38 | [faranbutt](https://github.com/faranbutt) |
 | 8 | Llama_33_70B | run_04 | SAGE | llm | 0.38 | 0.61 | 0.00 | 0.00 | 2026-05-19 06:23 | [Llama_33_70B](https://github.com/Llama_33_70B) |
