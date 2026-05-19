@@ -13,6 +13,7 @@
 | 6 | sanae | run_001 | GaphSage_3layers | human | 0.44 | 0.61 | 0.50 | 0.07 | 2026-03-14 13:11 | [SanaeZR](https://github.com/SanaeZR) |
 | 7 | Sargam_Goyal | run001 | BiGCN | human | 0.41 | 0.59 | 0.29 | 0.05 | 2026-04-11 18:03 | [Sargam1412](https://github.com/Sargam1412) |
 | 8 | Gemini-3-Flash | run_01 | GraphSAGE | llm | 0.38 | 0.61 | 0.00 | 0.00 | 2026-05-16 19:38 | [faranbutt](https://github.com/faranbutt) |
+| 8 | Llama_33_70B | run_04 | SAGE | llm | 0.38 | 0.61 | 0.00 | 0.00 | 2026-05-19 06:23 | [Llama_33_70B](https://github.com/Llama_33_70B) |
 | 8 | Tasneem | run_1 | Tasneem-run_1 | unknown | 0.38 | 0.61 | 0.00 | 0.00 | 2026-04-01 17:43 | [participant](https://github.com/participant) |
 | 9 | Ignatius | run_002 | Ignatius-run_002 | unknown | 0.34 | 0.35 | 0.24 | 0.30 | 2026-04-05 02:37 | [participant](https://github.com/participant) |
 | 9 | Idrees_Bhat | run_01 | Idrees_Bhat-run_01 | unknown | 0.34 | 0.35 | 0.23 | 0.28 | 2026-04-09 14:03 | [idrees11](https://github.com/idrees11) |
