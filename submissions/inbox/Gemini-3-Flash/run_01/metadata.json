@@ -1,0 +1,7 @@
+{
+    "team": "Gemini-3-Flash",
+    "run_id": "run_01",
+    "model_name": "GraphSAGE",
+    "model_type": "llm",
+    "submitter": "faranbutt"
+}

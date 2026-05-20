@@ -1,0 +1,7 @@
+{
+  "team": "LLM_Llama_33_70B",
+  "run_id": "run_04",
+  "model_name": "SAGE",
+  "model_type": "llm",
+  "submitter": "Llama_33_70B"
+}
