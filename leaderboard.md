@@ -24,9 +24,10 @@
 | 12 | Qwen2.5-Coder-32B-Instruct | run_01 | SAGEConv | LLM | 0.31 | 0.46 | 0.00 | 0.00 | 2026-05-15 17:57 | [/](https://github.com//) |
 | 12 | Murad | run_01 | GraphSAGE v1 | human | 0.31 | 0.39 | 0.38 | 0.93 | 2026-03-24 18:24 | [Murad-Hossen](https://github.com/Murad-Hossen) |
 | 13 | DeepSeek-v4-pro | run_01 | - | llm | 0.30 | 0.40 | 0.39 | 1.00 | 2026-05-15 17:57 | [abdksm](https://github.com/abdksm) |
-| 14 | AIkram | run_1 | AIkram-run_1 | unknown | 0.28 | 0.35 | 0.36 | 0.86 | 2026-03-19 17:14 | [participant](https://github.com/participant) |
-| 14 | Muhammad_Isah | run_01 | SAGEGNN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-14 14:01 | [Muhammad0isah](https://github.com/Muhammad0isah) |
-| 14 | samuel | run_01 | GCN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-08 22:12 | [samuelmatia](https://github.com/samuelmatia) |
+| 14 | LLM_gemini_25_pro | run_gemini | GraphSAGE | LLM | 0.29 | 0.39 | 0.39 | 0.98 | 2026-05-20 00:44 | [llm_gemini_2.5_pro](https://github.com/llm_gemini_2.5_pro) |
+| 15 | AIkram | run_1 | AIkram-run_1 | unknown | 0.28 | 0.35 | 0.36 | 0.86 | 2026-03-19 17:14 | [participant](https://github.com/participant) |
+| 15 | Muhammad_Isah | run_01 | SAGEGNN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-14 14:01 | [Muhammad0isah](https://github.com/Muhammad0isah) |
+| 15 | samuel | run_01 | GCN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-08 22:12 | [samuelmatia](https://github.com/samuelmatia) |
 
 ## Notes
 - This leaderboard is auto-generated from `leaderboard/leaderboard.csv`.
