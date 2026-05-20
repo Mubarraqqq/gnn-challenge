@@ -1,0 +1,7 @@
+{
+  "team": "organizers",
+  "run_id": "advanced_gnn",
+  "model_name": "Advanced GNN (GraphSAGE)",
+  "model_type": "human",
+  "submitter": "organizer_bot"
+}
