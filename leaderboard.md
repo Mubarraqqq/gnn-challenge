@@ -27,6 +27,7 @@
 | 14 | LLM_gemini_25_pro | run_gemini | GraphSAGE | LLM | 0.29 | 0.39 | 0.39 | 0.98 | 2026-05-20 00:44 | [llm_gemini_2.5_pro](https://github.com/llm_gemini_2.5_pro) |
 | 15 | AIkram | run_1 | AIkram-run_1 | unknown | 0.28 | 0.35 | 0.36 | 0.86 | 2026-03-19 17:14 | [participant](https://github.com/participant) |
 | 15 | Muhammad_Isah | run_01 | SAGEGNN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-14 14:01 | [Muhammad0isah](https://github.com/Muhammad0isah) |
+| 15 | claude_opus_4_6 | run_001 | GraphSAGE 3-layer | llm | 0.28 | 0.39 | 0.39 | 1.00 | 2026-05-20 14:33 | [ikram](https://github.com/ikram) |
 | 15 | samuel | run_01 | GCN | human | 0.28 | 0.39 | 0.39 | 1.00 | 2026-03-08 22:12 | [samuelmatia](https://github.com/samuelmatia) |
 
 ## Notes

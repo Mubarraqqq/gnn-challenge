@@ -1,0 +1,7 @@
+{
+  "team": "claude_opus_4_6",
+  "run_id": "run_001",
+  "model_name": "GraphSAGE 3-layer",
+  "model_type": "llm",
+  "submitter": "ikram"
+}

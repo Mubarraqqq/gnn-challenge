@@ -1,0 +1,398 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 America, Europe, Asia, Africa, Oceania, the Mid-720\
+dle East, and Central Asia, extracted from Open-721\
+StreetMap via OSMnx within a 500 m buffer722\
+around each city centre and restricted to driveable723\
+roads. The class distribution reflects naturally oc-724\
+curring urban patterns and is moderately imbal-725\
+anced, with 37 grid, 31 organic, and 52 hybrid726\
+cities. Each graph retains node coordinates, edge727\
+geometries and lengths, and graph-level attributes728\
+such as the city name and layout type; for the evalu-729\
+ation split, the layout label is withheld. The corpus730\
+is partitioned 70/30 into training and test sets with731\
+stratification by class.732\
+Participants are provided with the serialized city733\
+graphs and a label table that associates each train-734\
+ing graph with its target class. No engineered735\
+urban-form descriptors (e.g., circuity, intersection736\
+density, orientation entropy) are supplied, so mod-737\
+els must derive a graph-level representation directly738\
+from node positions, node degree, and the under-739\
+lying connectivity. Performance is evaluated on740\
+the hidden test split using the macro-averaged741\
+F1-score, which weights the three classes equally742\
+and discourages collapse onto the majority class;743\
+classification accuracy is reported as a secondary744\
+metric.745\
+For evaluation, participants generate a prediction746\
+table mapping each test city to its predicted class747\
+\{0, 1, 2\}. The file is encrypted locally with the pro-748\
+vided public key and submitted, together with a749\
+team-identifying metadata record, through a pull-750\
+request-based workflow. An automated pipeline751\
+validates, decrypts, scores, and updates the leader-752\
+board; invalid or unencrypted submissions are re-753\
+jected, and each team may submit multiple entries.754\
+A.3 C03: Real Or Fake!755\
+The Real or Fake challenge is a graph classifica-756\
+tion task based on Twitter news propagation data757\
+from the GossipCop dataset (Shu et al., 2020)(Dou758\
+et al., 2021). The objective is to train a Graph759\
+Neural Network (GNN) that predicts whether a760\
+news article is real or fake by leveraging both node761\
+features and the underlying propagation structure.762\
+Given a collection of graphs G = \{Gk\}, where763\
+each graph Gk = (Vk, Ek) represents the spread of764\
+a single news article, the task is to predict the label765\
+yk for each graph:766\
+f (Gk) \uc0\u8594  yk767\
+In this setting, nodes correspond to either the768\
+root news article or users who interacted with it,769\
+while edges capture interactions such as retweets. 770\
+Each node is associated with rich features, includ- 771\
+ing textual embeddings (e.g., BERT and spaCy) 772\
+and user profile attributes. The challenge lies in 773\
+effectively modeling both the structural patterns 774\
+of information diffusion and the node features to 775\
+accurately classify each news graph as Real (0) 776\
+or Fake (1). The dataset is split into 3,826 train- 777\
+ing graphs, 546 validation graphs, and 1,092 test 778\
+graphs, with test labels kept hidden for evaluation. 779\
+Participants are provided with the graph structure, 780\
+node features, and data splits through multiple files. 781\
+Performance is evaluated using classification ac- 782\
+curacy on the hidden test set. Accuracy measures 783\
+the proportion of correctly predicted graph labels 784\
+(real or fake) over all test samples. In addition 785\
+to accuracy, F1 score is used during development 786\
+and validation to provide a balanced assessment 787\
+of performance on the binary classification task. 788\
+Final leaderboard rankings are computed using the 789\
+hidden test labels. Participants must generate a 790\
+predictions.csv file containing the model 791\
+outputs for the test graphs. The file must include 792\
+two columns . id denotes the graph identifier and 793\
+y_pred the predicted class label, where 0 indi- 794\
+cates real news and 1 indicates fake news. 795\
+A.4 C04: 796\
+A.5 C05: GNN_BACE 797\
+A.5.1 Competition Overview 798\
+C05 challenge is designed to explore the capabil- 799\
+ities of Graph Neural Networks (GNNs) in learn- 800\
+ing meaningful chemical properties directly from 801\
+molecular structures. The primary objective is to 802\
+predict whether a given molecule acts as an in- 803\
+hibitor of the \uc0\u946 -secretase 1 (BACE-1) enzyme, a 804\
+critical enzymatic target in Alzheimer\'92s disease 805\
+research. The task is formulated as binary clas- 806\
+sification: active inhibitors are labeled as 1 and 807\
+inactive compounds as 0. 808\
+Participants are provided only with atom-type 809\
+features and bond connectivity, without any pre- 810\
+computed molecular descriptors (e.g., MolLogP, 811\
+Polar Surface Area). This enforces a pure repre- 812\
+sentation learning paradigm, challenging the GNN 813\
+to autonomously infer chemical properties such as 814\
+polarity, reactivity, and steric effects directly from 815\
+the graph topology. 816\
+A.5.2 Dataset Description 817\
+The dataset is derived from the BACE bench- 818\
+mark in the MoleculeNet suite, a standard ref- 819\
+11\
+erence dataset for molecular property prediction.820\
+Molecules are represented as undirected graphs821\
+where atoms correspond to nodes and chemical822\
+bonds to edges. The dataset is designed to reflect823\
+real-world cheminformatics challenges through824\
+three key properties:825\
+\'95 Class Imbalance: The training set is826\
+heavily imbalanced, with active (inhibiting)827\
+compounds constituting approximately 10%828\
+of the samples, mirroring real-world high-829\
+throughput screening distributions.830\
+\'95 Scaffold Split: The data is partitioned using831\
+a scaffold-based splitting strategy (?). This832\
+ensures that the test set contains molecules833\
+with structurally distinct chemical backbones834\
+compared to those in the training set, requir-835\
+ing models to generalize to previously unseen836\
+regions of chemical space.837\
+\'95 Variable Graph Sizes: Molecules naturally838\
+vary in the number of atoms and bonds, re-839\
+quiring GNN architectures capable of han-840\
+dling batched graphs of heterogeneous sizes841\
+through appropriate global pooling strategies.842\
+The evaluation metric is the Macro F1-Score,843\
+which computes the F1-score for each class inde-844\
+pendently and then averages them, granting equal845\
+weight to both the minority and majority classes.846\
+A.5.3 Input Files847\
+All data is provided in tabular CSV format and848\
+structured as follows:849\
+\'95 train_nodes.csv: Define the node feature850\
+matrix X. Each row corresponds to one851\
+atom, identified by a graph_id and a local852\
+node_id. Columns nf_0 through nf_7853\
+form an 8-dimensional one-hot vector encod-854\
+ing the atom type.855\
+\'95 train_edges.csv: Define the adjacency struc-856\
+ture in sparse COO (edge list) format. Each857\
+row specifies a directed edge from src to858\
+dst within a graph identified by graph_id.859\
+Since the molecular graph is undirected, each860\
+bond appears twice. The column ef_0 en-861\
+codes a scalar edge feature.862\
+\'95 train_labels.csv: Contains the ground-863\
+truth binary labels for each training graph.864\
+Columns are id and target (0 for inactive,865\
+1 for active).866\
+A.5.4 Submission Guidelines 867\
+The competition uses an automated, privacy- 868\
+preserving evaluation pipeline built on GitHub Ac- 869\
+tions. The workflow is as follows: 870\
+1. Generate Predictions: Run the model to pro- 871\
+duce a submission.csv file containing 872\
+predicted labels for all test graphs. 873\
+2. Encrypt Submission: Encrypt the predic- 874\
+tion file using the provided script to produce 875\
+a submission.enc file. This step en- 876\
+sures the confidentiality of test set predictions 877\
+throughout the review process. 878\
+3. Submit via Pull Request: Push the encrypted 879\
+file to a new branch on the participant\'92s fork 880\
+and open a Pull Request (PR) against the main 881\
+repository. 882\
+4. Automated Scoring: Upon PR creation, a 883\
+GitHub Actions workflow is triggered. It de- 884\
+crypts the submission, evaluates it against 885\
+the private test labels, updates the public 886\
+leaderboard, automatically closes the PR, and 887\
+deletes the submission branch. 888\
+A.6 C06: 889\
+A.7 C07: 890\
+A.8 C08: 891\
+A.9 C09: GraphFMD \'96 Graph-based 892\
+Financial Misconduct Detection 893\
+The GraphFMD challenge is a temporal inductive 894\
+node classification task defined over the Bitcoin 895\
+transaction network. Each sample is a transaction 896\
+represented as a node vi in a directed temporal 897\
+graph G = (V, E), where nodes denote individ- 898\
+ual Bitcoin transactions and edges denote the flow 899\
+of Bitcoin between them. Given a historical sub- 900\
+graph Gtrain, the objective is to learn a mapping 901\
+f (vi | Gtrain) \uc0\u8594  yi that assigns each test-time 902\
+transaction to one of two classes: illicit (1) or licit 903\
+(2). GraphFMD thus evaluates the ability of GNNs 904\
+to perform inductive inference under realistic foren- 905\
+sic conditions, including feature noise, temporal 906\
+distribution shift, and severe class imbalance, with- 907\
+out access to future transaction context during train- 908\
+ing. 909\
+The dataset is derived from the Elliptic Bitcoin 910\
+transaction graph (Weber et al., 2019) and is parti- 911\
+tioned temporally: training nodes span time steps 1\'96 912\
+34, comprising 16,658 labelled transactions, while 913\
+12\
+test nodes are drawn from time steps 35 and be-914\
+yond, comprising 8,896 transactions. The graph915\
+contains approximately 5 million directed edges.916\
+Each node is associated with a 165-dimensional917\
+feature vector consisting of 94 local transaction918\
+features (e.g., transaction amounts, fees, and in-919\
+put/output counts) and 71 aggregated neighbour-920\
+hood features derived from one-hop neighbours;921\
+Gaussian noise has been injected into these fea-922\
+tures to simulate real-world data degradation. The923\
+dataset exhibits strong class imbalance, with illicit924\
+transactions constituting only 1\'963% of all nodes.925\
+Participants are provided with node feature files926\
+and an edge list for the full graph, together with927\
+ground-truth labels for the training split. No928\
+hand-crafted forensic descriptors (e.g., mixing pat-929\
+terns, chain-length heuristics, or address-clustering930\
+signals) are supplied, so models must derive931\
+transaction-level representations directly from the932\
+raw feature vectors and the underlying transaction-933\
+flow topology. Performance is evaluated on the hid-934\
+den test split using the macro-averaged F1-score,935\
+which weights both classes equally and discourages936\
+collapse onto the dominant licit class; this metric937\
+penalises models that fail to recover the rare illicit938\
+signal.939\
+For evaluation, participants generate a prediction940\
+table mapping each test transaction identifier to its941\
+predicted class \{1, 2\}. Submissions are encrypted942\
+and uploaded via a secure Google Form, which trig-943\
+gers a GitHub Actions workflow that validates the944\
+submission, scores it against the hidden label file,945\
+and updates the public leaderboard automatically;946\
+only one final submission per team is permitted.947\
+A.10 C10:948\
+A.11 C11: PARK-GNN949\
+The PARK-GNN Challenge (Parkinson\'92s Acoustic950\
+Representation & Knowledge with Graph Neural951\
+Networks) is a node classification task defined over952\
+a graph constructed from acoustic voice record-953\
+ings. Each node vi in the graph G = (V, E) rep-954\
+resents a single voice recording, characterized by955\
+a 22-dimensional feature vector of acoustic mea-956\
+surements including vocal fundamental frequency957\
+statistics, jitter and shimmer variations, harmonics-958\
+to-noise ratios, and nonlinear dynamical complex-959\
+ity features. Edges are formed by a k-nearest-960\
+neighbor criterion (k = 5) over acoustic similarity961\
+in feature space, supplemented by subject-level962\
+connections that link recordings from the same963\
+individual. The objective is to learn a mapping 964\
+f (vi) \uc0\u8594  yi \u8712  \{0, 1\} that assigns each voice record- 965\
+ing to either a healthy control (0) or a Parkinson\'92s 966\
+Disease patient (1). 967\
+The dataset is derived from the UCI Parkinson\'92s 968\
+Dataset, comprising 195 voice recordings collected 969\
+from 31 subjects, of whom 23 were diagnosed with 970\
+Parkinson\'92s Disease and 8 were healthy controls. 971\
+The corpus is partitioned into a training set of 156 972\
+nodes (approximately 80%) and a hidden test set 973\
+of 39 nodes (approximately 20%). Training labels 974\
+are provided alongside the full graph structure; test 975\
+labels are withheld and used exclusively within the 976\
+automated evaluation pipeline. 977\
+Participants are provided with the serialized 978\
+graph structure, node feature matrices, and a la- 979\
+bel table mapping each training node to its ground- 980\
+truth class. No engineered biomarker composites or 981\
+pre-computed diagnostic descriptors are supplied; 982\
+models must derive node representations directly 983\
+from the raw acoustic features and the relational 984\
+graph topology. Performance is evaluated on the 985\
+hidden test split using the macro-averaged F1- 986\
+score, which weights the healthy and Parkinson\'92s 987\
+classes equally and is robust to the class imbal- 988\
+ance inherent in the dataset (approximately 75% 989\
+Parkinson\'92s, 25% healthy). 990\
+For evaluation, participants generate a predic- 991\
+tion table mapping each test node identifier to a 992\
+predicted class in \{0, 1\}. The prediction file is 993\
+encrypted locally using the provided public-key 994\
+scheme and submitted through a pull-request-based 995\
+workflow. An automated GitHub Actions pipeline 996\
+validates, decrypts, scores, and updates the public 997\
+leaderboard; invalid or unencrypted submissions 998\
+are rejected automatically, and each participant is 999\
+restricted to a single final submission to preserve 1000\
+evaluation fairness. 1001\
+A.12 C12: GNN-CoRA 1002\
+The GNN-CoRA competition is a node classifi- 1003\
+cation task defined over a citation-network graph 1004\
+derived from the Cora benchmark dataset Sen et al. 1005\
+(2008). The objective is to train a Graph Neural 1006\
+Network (GNN) that predicts the research-topic 1007\
+label of each publication node from both its textual 1008\
+feature representation and the surrounding citation 1009\
+structure, while maintaining robustness under ad- 1010\
+ditional Gaussian noise. Formally, given a graph 1011\
+G = (V, E) in which nodes correspond to publica- 1012\
+tions and edges denote citation relationships, the 1013\
+task is to learn a mapping f (vi) \uc0\u8594  yi that assigns 1014\
+13\
+each node vi to one of seven research-topic classes.1015\
+The dataset consists of 2,708 publication nodes1016\
+connected by 5,429 citation edges. Each node is1017\
+associated with a high-dimensional sparse bag-of-1018\
+words representation extracted from the publication1019\
+text, and the graph structure captures citation links1020\
+between papers. The benchmark follows the stan-1021\
+dard citation-network split, containing 140 labelled1022\
+training nodes, 500 validation nodes, and 1,0001023\
+hidden test nodes. To increase task difficulty and1024\
+evaluate robustness, Gaussian noise is injected into1025\
+the node-feature representations during benchmark1026\
+construction.1027\
+Participants are provided with the graph connec-1028\
+tivity information, node feature matrices, training1029\
+and validation label tables, and identifiers for the1030\
+hidden test nodes. The ground-truth labels for the1031\
+test split remain concealed and are used exclusively1032\
+within the automated evaluation pipeline. Models1033\
+are expected to infer node classes directly from the1034\
+graph topology and feature representations without1035\
+access to external supervision or handcrafted graph1036\
+statistics. Performance is evaluated using classifi-1037\
+cation accuracy on the hidden test set, defined as1038\
+the proportion of correctly predicted node labels1039\
+over all evaluation nodes:1040\
+Accuracy = #correct predictions\
+#total samples\
+1041\
+For evaluation, participants generate a predic-1042\
+tion table mapping each hidden test node to one1043\
+of the seven target classes \{0, 1, 2, 3, 4, 5, 6\}. The1044\
+prediction file is encrypted locally using the bench-1045\
+mark\'92s public-key encryption scheme and submit-1046\
+ted through a pull-request-based workflow. An1047\
+automated GitHub Actions evaluation pipeline vali-1048\
+dates, decrypts, scores, and updates the leaderboard1049\
+accordingly. Invalid or improperly formatted sub-1050\
+missions are rejected automatically, and each par-1051\
+ticipant is restricted to a single final submission to1052\
+preserve evaluation fairness.1053\
+A.13 C13:1054\
+A.14 C14: BrainAge1055\
+The BrainAge challenge is a graph-level regression1056\
+task defined over structural neuroimaging data. The1057\
+dataset consists of brain graphs G = \{Gi\}, where1058\
+each graph Gi = (Vi, Ei) is constructed from struc-1059\
+tural and diffusion MRI data from a specific sub-1060\
+ject\'92s imaging session. Nodes Vi correspond to cor-1061\
+tical brain regions defined by the Desikan-Killiany1062\
+atlas (Desikan et al., 2006) (N = 68), and edges1063\
+Ei encode structural connectivity derived from dif- 1064\
+fusion MRI. Given a graph Gi, the objective is to 1065\
+learn a mapping f (Gi) \uc0\u8594  yi, where yi \u8712  R de- 1066\
+notes the chronological age of an individual at the 1067\
+time of image acquisition. 1068\
+The dataset is constructed from the OASIS-3 1069\
+longitudinal neuroimaging cohort (LaMontagne 1070\
+et al., 2019), restricted to subjects who remained 1071\
+cognitively normal across all visits. Cortical 1072\
+measurements were obtained from preprocessed 1073\
+FreeSurfer (Fischl, 2012) outputs available through 1074\
+the Neuroimaging Informatics Tools and Resources 1075\
+Clearinghouse (NITRC). Structural connectivity in- 1076\
+formation is sourced from the PIT Bioinformatics 1077\
+Group (Kerepesi et al., 2017). The final dataset 1078\
+comprises 431 MRI sessions from 288 unique sub- 1079\
+jects across multiple longitudinal time points. 1080\
+For every cortical region, two node features are 1081\
+provided: cortical thickness and gray matter vol- 1082\
+ume. Edge weights are defined by diffusion MRI 1083\
+streamline counts between regions. To prevent in- 1084\
+formation leakage arising from repeated longitudi- 1085\
+nal observations of the same participant, training, 1086\
+validation, and test splits were performed at the 1087\
+subject level using age-stratified sampling. Perfor- 1088\
+mance is evaluated on the hidden test split using 1089\
+Mean Absolute Error (MAE), 1090\
+MAE = 1\
+N\
+NX\
+i=1\
+|\'88yi \uc0\u8722  yi| , 1091\
+where N denotes the number of test samples, 1092\
+\'88yi is the predicted age and yi is the corresponding 1093\
+ground-truth chronological age. 1094\
+For evaluation, participants generate age predic- 1095\
+tions for test MRI sessions and submit them as an 1096\
+encrypted prediction table through a pull-request- 1097\
+based GitHub workflow. The automated GitHub 1098\
+pipeline validates the submission, decrypts the pre- 1099\
+dictions, computes the evaluation score, and up- 1100\
+dates the leaderboard upon merge.}
