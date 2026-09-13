@@ -1,4 +1,6 @@
 venv/
+# Keep the nested local checkout out of the parent repository.
+/gnn-challenge/
 .DS_Store
 __pycache__/
 data/test_labels.csv
